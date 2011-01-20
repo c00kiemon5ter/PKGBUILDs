@@ -8,7 +8,7 @@ pkgdesc="A Tool for Building Expert Systems"
 arch=('i686' 'x86_64')
 url="http://www.ghg.net/clips/CLIPS.html"
 license=('custom')
-depends=('libxaw' 'xbitmaps')
+depends=('termcap' 'libxaw' 'xbitmaps')
 source=("http://downloads.sourceforge.net/clipsrules/${pkgname}_core_source_624.tar.Z"
         "http://downloads.sourceforge.net/clipsrules/x_windows_ide_source_624.tar.Z"
         "http://downloads.sourceforge.net/clipsrules/make_and_help_files_624.zip"
