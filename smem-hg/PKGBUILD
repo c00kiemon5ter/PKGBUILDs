@@ -26,10 +26,8 @@ build() {
 }
 
 package() {
-    mkdir -p ${pkgdir}/usr/bin/
-    mkdir -p ${pkgdir}/usr/share/man/man8/
-    install -m 755 ${srcdir}/${_hgrepo}/smem ${pkgdir}/usr/bin/
-    install -m 755 ${srcdir}/${_hgrepo}/smemcap ${pkgdir}/usr/bin/
-    install -m 644 ${srcdir}/${_hgrepo}/smem.8 ${pkgdir}/usr/share/man/man8/
+    install -D -m 755 ${srcdir}/${_hgrepo}/smem ${pkgdir}/usr/bin/smem
+    install -D -m 755 ${srcdir}/${_hgrepo}/smemcap ${pkgdir}/usr/bin/smemcap
+    install -D -m 644 ${srcdir}/${_hgrepo}/smem.8 ${pkgdir}/usr/share/man/man8/smem.8
 }
 
