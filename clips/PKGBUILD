@@ -1,0 +1,36 @@
+# Maintainer: Thomas td123 Dziedzic <gostrc@gmail.com>
+# Contributor: Ivan c00kiemon5ter Kanakarakis <ivan.kanak@gmail.com>
+# Contributor: jht <stefano@inventati.org>
+pkgname="clips"
+pkgver="6.24"
+pkgrel=2
+pkgdesc="A Tool for Building Expert Systems"
+arch=('i686' 'x86_64')
+url="http://www.ghg.net/clips/CLIPS.html"
+license=('custom')
+depends=('libxaw' 'xbitmaps')
+source=("http://downloads.sourceforge.net/clipsrules/${pkgname}_core_source_624.tar.Z"
+        "http://downloads.sourceforge.net/clipsrules/x_windows_ide_source_624.tar.Z"
+        "http://downloads.sourceforge.net/clipsrules/make_and_help_files_624.zip"
+        "clips.install")
+install=clips.install
+sha256sums=('80852a0df97597f710e90ca8bf5ecdc250c2034bf9dd3044bbedee111ad2e4ab'
+            '66429eb818559323f5e90bd7b3c1e4f88af409a30a3433111a1d85bc7c789d09'
+            '302712bbc2634cc437e6a7617d41ba54933ad6ffe5e01f0f869e9d7bc2cae9b8'
+            '584babff75160bf8243ad583265289fab44b3160a960487a19dc3fab36722466')
+
+build() {
+    cd ${srcdir}/${pkgname}src/${pkgname}src
+    cp -a ../../x-prjct/color/* .
+    cp -a ../../x-prjct/makefile/* .
+    cp -a ../../x-prjct/xinterface/* .
+    make -f makefile.x || return 1
+    make -f ../../makefile.gcc || return 1
+}
+
+package() {
+    install -D -m755 ${srcdir}/${pkgname}src/${pkgname}src/xclips ${pkgdir}/usr/bin/clips
+    install -D -m755 ${srcdir}/${pkgname}src/${pkgname}src/clips ${pkgdir}/usr/bin/clips-console
+    install -D -m644 ${srcdir}/${pkgname}src/readme.txt ${pkgdir}/usr/share/licenses/clips/LICENSE
+}
+
