@@ -3,7 +3,7 @@
 # Contributor: jht <stefano@inventati.org>
 pkgname="clips"
 pkgver="6.24"
-pkgrel=2
+pkgrel=3
 pkgdesc="A Tool for Building Expert Systems"
 arch=('i686' 'x86_64')
 url="http://www.ghg.net/clips/CLIPS.html"
