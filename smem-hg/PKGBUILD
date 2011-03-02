@@ -1,6 +1,6 @@
 # Maintainer: Ivan c00kiemon5ter Kanakarakis <ivan.kanak@gmail.com>
 pkgname="smem-hg"
-pkgver=44
+pkgver=51
 pkgrel=1
 pkgdesc="Generate reports on memory usage."
 arch=(any)
