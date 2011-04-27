@@ -31,6 +31,8 @@ build() {
   msg "Starting make..."
 
   cd "$srcdir/$_gitname"
+  sed -i 's/mktemp.*-dt.*"/mktemp -d "$(basename $0).XXXXXXXXXX"/' shocco.sh
+
   ./configure --prefix=/usr
   make
 }
