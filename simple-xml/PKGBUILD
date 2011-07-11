@@ -1,7 +1,7 @@
 # Maintainer: Vitaliy Berdinskikh ur6lad[at]archlinux.org.ua
 # Contributor: Ivan c00kiemon5ter Kanakarakis <ivan.kanak@gmail.com>
 pkgname="simple-xml"
-pkgver=2.5.2
+pkgver=2.6
 pkgrel=1
 pkgdesc="XML serialization and configuration framework for Java"
 arch=('any')
@@ -9,7 +9,7 @@ url="http://simple.sourceforge.net/"
 license=('LGPL')
 depends=('java-runtime')
 source=("http://downloads.sourceforge.net/simple/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('fc098a69141f2d359ad47a590b8dddab1cd183b949b382af5bb3d0b171951b8c')
+sha256sums=('bbf9d82113e374abd97f3875b2df426977fd9f01118dd654d54e22f4309d93c6')
 
 package() {
     install -D -m644 "$srcdir/$pkgname-$pkgver/jar/$pkgname-$pkgver.jar" "$pkgdir/usr/share/java/$pkgname/$pkgname-$pkgver.jar"
