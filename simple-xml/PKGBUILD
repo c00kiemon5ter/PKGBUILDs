@@ -1,7 +1,7 @@
 # Maintainer: Vitaliy Berdinskikh ur6lad[at]archlinux.org.ua
 # Contributor: Ivan c00kiemon5ter Kanakarakis <ivan.kanak@gmail.com>
 pkgname="simple-xml"
-pkgver=2.6
+pkgver=2.6.2
 pkgrel=1
 pkgdesc="XML serialization and configuration framework for Java"
 arch=('any')
