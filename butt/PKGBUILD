@@ -1,0 +1,27 @@
+# Contributor: Kosava <kosava@gmail.com>
+
+pkgname=butt
+pkgver=0.1.12
+pkgrel=1
+pkgdesc='Broadcasting via the IceCast or ShoutCast services with BUTT (Broadcast Using This Tool).'
+arch=('i686' 'x86_64')
+license=("GPL2")
+url="http://sourceforge.net/projects/${pkgname}/"
+depends=('portaudio' 'lame' 'libvorbis')
+makedepends=('fltk')
+optdepends=('shoutcast' 'icecast')
+source=("http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}-src.tar.bz2")
+sha256sums=('c64ff4d46b6ab3a309a7bc1031f61daf496c8e31c83ee82674fe97d17cce0132')
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	./configure --prefix /usr
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	mkdir -p "${pkgdir}/usr/bin"
+	make DESTDIR="${pkgdir}" install
+}
+
